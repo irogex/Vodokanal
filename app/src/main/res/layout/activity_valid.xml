@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vodakanal"
+    android:orientation="vertical"
+    tools:context=".activities.ValidActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:paddingLeft="20dp"
+        android:paddingTop="60dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/white"
+        android:paddingBottom="10dp"
+        android:text="Здравствуйте, введите ПИН-код!"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic" />
+
+    <EditText
+        android:id="@+id/pin_code_field"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:background="#D6E9F1"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="numberPassword"
+
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/pin_code_button"
+
+        android:layout_width="122dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="onCheckCode"
+        android:text="Войти"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+
+        app:layout_constraintTop_toBottomOf="@+id/pin_code_field" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="1"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic"
+            />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:text="2"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="3"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic"
+
+/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="4"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:text="5"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="6"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="7"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:text="8"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="9"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="Выход"
+            android:onClick="onExit"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:text="0"
+            android:onClick="onTapButton"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="Удалить"
+            android:onClick="onDel"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@drawable/oval_button"
+                  android:textSize="12sp"
+            android:layout_gravity="center"
+            android:typeface="normal"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+
+</LinearLayout>
