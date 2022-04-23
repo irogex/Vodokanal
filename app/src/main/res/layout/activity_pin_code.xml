@@ -58,7 +58,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
@@ -117,7 +117,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
@@ -174,7 +174,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
@@ -231,20 +231,20 @@
 
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/button12"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:text="Выход"
+
             android:onClick="onExit"
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:background="@drawable/oval_button"
+            android:background="@drawable/ic_exitn"
             android:textSize="12sp"
             android:layout_gravity="center"
             android:typeface="normal"
@@ -269,19 +269,18 @@
 
         <Button
             android:id="@+id/button14"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:text="Удалить"
-            android:onClick="onDel"
             android:layout_width="55dp"
             android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_deleten"
+            android:onClick="onDel"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:background="@drawable/oval_button"
             android:textSize="12sp"
-            android:layout_gravity="center"
-            android:typeface="normal"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:typeface="normal" />
     </LinearLayout>
 
 

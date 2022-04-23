@@ -6,9 +6,16 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.287962962962963" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_deleten.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_exit.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_exitn.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/oval_button.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/oval_button_exit.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/oval_button_old.xml" value="0.195" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29030797101449274" />
-        <entry key="app/src/main/res/layout/activity_pin_code.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_pin_code.xml" value="0.22736842105263158" />
         <entry key="app/src/main/res/layout/activity_valid.xml" value="0.33" />
         <entry key="app/src/main/res/layout/main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/old_activity_pin_code.xml" value="0.1" />
@@ -22,5 +29,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item android:state_pressed="false">
+
         <shape android:shape="oval">
             <gradient android:angle="90" android:startColor="#ffffff" android:endColor="#ececec" android:type="linear"/>
             <stroke android:width="2dp" android:color="#44ccff"/>
+
         </shape>
     </item>
     <item android:state_pressed="true">

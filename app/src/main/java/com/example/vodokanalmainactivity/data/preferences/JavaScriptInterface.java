@@ -1,6 +1,5 @@
 package com.example.vodokanalmainactivity.data.preferences;
 import android.content.Context;
-import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -19,7 +18,7 @@ public class JavaScriptInterface
     @JavascriptInterface
     public void showToast(String toast) {
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
-        Log.d("LOGLOG","press-"+toast);
+        //Log.d("LOGLOG","press-"+toast);
     }
 
     @JavascriptInterface

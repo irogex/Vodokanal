@@ -68,6 +68,12 @@ public class WebViewActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 //super.onPageFinished(view, url);
+                view.getSettings().setDomStorageEnabled(true);
+                view.getSettings().setAppCacheEnabled(true);
+                view.getSettings().setDatabaseEnabled(true);
+                view.getSettings().setDomStorageEnabled(true);
+                view.getSettings().setSupportMultipleWindows(true);
+                view.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
                 view.loadUrl("javascript:var elem=document.getElementById('old'); elem.parentNode.removeChild(elem);");
                 if (view.getUrl().contains("https://vdk03.m-pays.ru/Login2")) {
                     StringBuilder sb = new StringBuilder();
@@ -76,6 +82,7 @@ public class WebViewActivity extends AppCompatActivity {
                     sb.append(" formxxx.onsubmit = function () {");
                     sb.append(" var l3=document.getElementById('login').value;");
                     sb.append(" var l5=document.getElementById('password').value;");
+                   // sb.append(" var e1=document.getElementById('old'); e1.style.display='none';");
                     sb.append(" window.AndroidFunction.processHTML(l3,l5);");
                     sb.append(" return true;");
                     sb.append(" };");
@@ -90,10 +97,34 @@ public class WebViewActivity extends AppCompatActivity {
 //                                 "a1=document.getElementById('password').value='314159'");
 //                    }
                 }
+//                if (view.getUrl().contains("https://vdk03.m-pays.ru/Prints2?id=61213")) {
+//                    StringBuilder sb1 = new StringBuilder();
+//
+//
+//                 sb1.append("var btn1 = document.getElementById('submit1');");
+//                    sb1.append("btn1.onclick = function(){");
+//                  sb1.append("var xhr = new XMLHttpRequest();\n" +
+//                          "\n" +
+//                          "var body = 'id=' + encodeURIComponent(61213) +\n" +
+//                          "  '&month=' + encodeURIComponent(2022-04);\n" +
+//                          "\n" +
+//                          "xhr.open(\"POST\", '/Prints2?handler=ChargePrint', true);\n" +
+//                          "xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');\n" +
+//                          "\n" +
+//                          "xhr.onreadystatechange = ...;\n" +
+//                          "\n" +
+//                          "xhr.send(body);");
+//                    sb1.append(" alert('S'); }; ");
+//                    sb1.append("}");
+//
+//                    view.loadUrl("javascript:" + sb1.toString());
+//                }
                 //Log.d("LOGLOG",url);
             }
         });
+
        webView.loadUrl("https://vdk03.m-pays.ru/Login2");
+
    }
 }
 
