@@ -75,6 +75,7 @@ public class WebViewActivity extends AppCompatActivity {
                 view.getSettings().setSupportMultipleWindows(true);
                 view.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
                 view.loadUrl("javascript:var elem=document.getElementById('old'); elem.parentNode.removeChild(elem);");
+                view.loadUrl("javascript:var elem=document.getElementById('old'); elem.parentNode.removeChild(elem);");
                 if (view.getUrl().contains("https://vdk03.m-pays.ru/Login2")) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("var formxxx = document.getElementsByTagName('form')[0];");

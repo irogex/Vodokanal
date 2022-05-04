@@ -5,7 +5,7 @@
     android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vodakanal"
+    android:background="@drawable/bg_voda"
     android:orientation="vertical"
     tools:context=".activities.ValidActivity">
 
@@ -29,35 +29,23 @@
         android:layout_width="wrap_content"
         android:layout_height="53dp"
         android:layout_marginTop="10dp"
-        android:background="#D6E9F1"
+        android:letterSpacing = "1"
         android:clickable="false"
         android:ems="10"
         android:focusable="false"
-        android:inputType="numberPassword"
-
+        android:hint="*****"
+        android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/pin_code_button"
 
-        android:layout_width="122dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/yellow"
-        android:onClick="onCheckCode"
-        android:text="Войти"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-
-        app:layout_constraintTop_toBottomOf="@+id/pin_code_field" />
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <Button
@@ -69,12 +57,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic"
+
             />
 
         <Button
@@ -87,12 +75,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+             />
 
         <Button
             android:id="@+id/button5"
@@ -103,12 +91,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic"
+
 
 />
     </LinearLayout>
@@ -128,12 +116,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
 
         <Button
             android:id="@+id/button7"
@@ -145,12 +133,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
 
         <Button
             android:id="@+id/button8"
@@ -161,12 +149,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -185,12 +173,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+           />
 
         <Button
             android:id="@+id/button10"
@@ -202,12 +190,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+           />
 
         <Button
             android:id="@+id/button11"
@@ -218,12 +206,12 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -237,16 +225,16 @@
             android:id="@+id/button12"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:onClick="onExit"
+            android:onClick="onDel"
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:background="@drawable/ic_exitn"
+            android:background="@drawable/ic_back"
             android:textSize="12sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
 
         <Button
             android:id="@+id/button13"
@@ -258,28 +246,28 @@
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/oval_button"
             android:textSize="24sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+             />
 
         <Button
             android:id="@+id/button14"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
+            android:onClick="onCheckCode"
 
-            android:onClick="onDel"
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:background="@drawable/ic_deleten"
+            android:background="@drawable/ic_check"
                   android:textSize="12sp"
             android:layout_gravity="center"
             android:typeface="normal"
-            android:textStyle="italic" />
+            />
     </LinearLayout>
 
 
