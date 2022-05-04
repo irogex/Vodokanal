@@ -34,6 +34,7 @@
         android:ems="10"
         android:focusable="false"
         android:hint="*****"
+        android:backgroundTint="@android:color/white"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@color/white"

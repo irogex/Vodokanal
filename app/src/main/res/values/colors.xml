@@ -11,4 +11,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#00afef</color>
     <color name="light_none">#00EF0000</color>
+    <color name="tint_white">#DBD4D4</color>
 </resources>

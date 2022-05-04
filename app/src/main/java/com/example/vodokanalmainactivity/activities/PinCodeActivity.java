@@ -25,6 +25,7 @@ public class PinCodeActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
         dataPreferences = ((App) getApplication()).dataPreferences;
     }
    public void onEditCode(View button){
