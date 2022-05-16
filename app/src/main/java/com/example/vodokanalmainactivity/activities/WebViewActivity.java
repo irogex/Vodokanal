@@ -98,12 +98,177 @@ public class WebViewActivity extends AppCompatActivity {
 //                                 "a1=document.getElementById('password').value='314159'");
 //                    }
                 }
-//                if (view.getUrl().contains("https://vdk03.m-pays.ru/Prints2?id=61213")) {
-//                    StringBuilder sb1 = new StringBuilder();
+                if (view.getUrl().contains("https://vdk03.m-pays.ru/Prints2?id=61213")) {
+                    StringBuilder sb1 = new StringBuilder();
+
+                 sb1.append("var btn1 = document.getElementById('submit1');");
+                    sb1.append("btn1.onclick = function(){");
+                    sb1.append("var token = document.getElementsByName('__RequestVerificationToken')[0];");
+                    //sb1.append("var body = 'id=61213' + '&month=2022-04' + '&handler=ChargePrint';");
+                    sb1.append("var body = 'id=61213' + '&month=2022-05';");
+                   // sb1.append("var body = \"id=61213&month=2022-04&handler=ChargePrint\";");
+                   // sb1.append("req.open(\"POST\", \"/Prints2?id=61213\", true);");
+                   // sb1.append("alert(token.value);");
+                    sb1.append("var req = new XMLHttpRequest();");
+                   // sb1.append("req.open('POST', '/Prints2?id=61213', true);");
+                    sb1.append("req.open('POST', '/Prints2?handler=ChargePrint', true);");
+                    sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
+                    sb1.append("req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');");
+
+                    sb1.append("req.responseType = 'Text';");
+                    sb1.append("req.send(body);  "); //Должен быть конечным
+                     sb1.append("req.onload = function () {\n" +
+                           // "var blob = new Blob([this.response], {type: 'application/pdf'});\n" +
+                           // "const url = window.URL.createObjectURL(blob);\n" +
+                          //  "window.AndroidFunction.showPdf(url);\n" +
+                           "document.body.innerHTML = req.response;" +
+                           //"document.body.innerHTML = '<html><head><title>Test</title><style>body{background:white}</style></head><body>' +req.response+ '</body></html>';" +
+                           // "document.body.innerHTML = '<html><head><title>Test</title><style>body{background:white}</style></head><body><embed width=300 height=300 src=data:application/pdf;base64,\"'+url+'\"></embed></body></html>';" +
+
+
+                           // "document.body.innerHTML = '<iframe width=100% height=500 src=data:application/pdf;base64,/Prints2?handler=ChargePrint?id=61213&month=2022-05&__RequestVerificationToken=\"'+ token.value +'\"></iframe>';" +
+
+                            //"window.open(url); \n" +
+                           // "document.body.innerHTML = url; \n" +
+                           // "            if (this.status == 200) {\n" +
+
+                            //"                var blob = new Blob([this.response], {type: 'application/pdf'});\n" +
+                           // "s.innerHTMLthis.response); \n" +
+
+                           // "let div = document.createElement('div'); \n" +
+                          //  "let div1 = pdfWindow.document.write(\"<html<head><title>\"+fileName+\"</title><style>body{margin: 0px;}iframe{border-width: 0px;}</style></head>\");\n" +
+                          //  "let div1 = document.createElement('<html><head><title>000</title><style>body{margin: 20px;}iframe{border-width: 0px;}</style></head>');\n" +
+                         //   "let div2 = pdfWindow.document.write(\"<body><embed width='100%' height='100%' src='data:application/pdf;base64, \" + encodeURI(this.response)+\"#toolbar=0&navpanes=0&scrollbar=0'></embed></body></html>\"); \n" +
+                           // "let div2 = document.write(\"<body><embed width='100%' height='100%' src='data:application/pdf;base64, \" + encodeURI(this.response)+\"#toolbar=0&navpanes=0&scrollbar=0'></embed></body></html>\"); \n" +
+                           // "document.body.innerHTML = '<strong>TEST</strong>'; \n" +
+
+                           // "document.body.append(div1); \n" +
+                           // "document.body.append(div2); \n" +
+
+                          //  "window.open(\"data:application/pdf,\" + this.response);" +
+
+//                            "let pdfWindow = document.body.innerHTML;\n" +
+//                            "pdfWindow=(\n" +
+//                            "document.body.innerHTML =  \n" +
+//                            " \"<iframe width='100%' height='100%' src='data:application/pdf;base64, \" +\n" +
+//                           "    encodeURI(this.response) + \"'></iframe>\"\n" +
+//                            ");" +
+
+                           // "document.body.innerHTML = this.response; \n" +
+   //  ("<body><embed width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(base64Data)+"#toolbar=0&navpanes=0&scrollbar=0'></embed></body></html>");
+
+                         //   "document.body.innerHTML = '<html><head><title>Test</title><style>body{margin: 0px; background:white;}</style></head><body><embed width=300 height=300 src=data:application/pdf;base64,\"' + req.response+'\"></embed></body></html>';" +
+                         //   "document.body.innerHTML = '<iframe width=100% height=500 src=\"/Prints2?handler=ChargePrint?id=61213&month=2022-05&__RequestVerificationToken='+ token.value +'\"></iframe>';" +
+                          //  "window.open(\"data:application/pdf,\" + url);\n" +
+                          //  "window.AndroidFunction.showPdf(url);\n" +
+//                            "var a = document.createElement('a');\n" +
+//                           "a.href = url;\n" +
+//                            "document.body.append(a); \n" +
+//                            "a.download = 'myFile.pdf';\n" +
+//                            "a.click();\n" +
+//                            "setTimeout(function () {\n" +
 //
+//                            "            window.URL.revokeObjectURL(body)\n" +
+//                            "                , 100\n" +
+//                            "        });\n" +
+
+
+
+                            //"            }\n" +
+                            "        };};");
+
+//                    sb1.append("req.onload = () => {" +
+//                            "var blob = new Blob([req.response]);\n" +
+//                            "                var link = document.createElement('a');\n" +
+//                            "                link.href = window.URL.createObjectURL(blob);\n" +
+//                            "                window.open(link);}; }; ");
+           //         "                window.AndroidFunction.showPdf(url);\n" +
+                  //  sb1.append("req.onload = () => print(req.response); }; ");
+                   // sb1.append("req.onload = () => window.AndroidFunction.showPdf(req.response); };");
+                   // sb1.append("req.onload = () => window.open(\"https://docs.google.com/viewer?url=req.response\"); }; ");
+
+
+
+//                  sb1.append("req.onload = getHeaderResult(req.response);  };");
+
+//                    sb1.append("   let blob = new Blob([data], {type: 'application/pdf'}); \n" +
+//                            "                let link = document.createElement('a'); \n" +
+//                            "                let objectURL = window.URL.createObjectURL(blob); \n" +
+//                            "                link.href = objectURL; \n" +
+//                            "                link.target = '_blank'; \n" +
+//                            "                link.download = \"fileName.pdf\"; \n" +
+//                            "                (document.body || document.documentElement).appendChild(link); \n" +
+//                            "                link.click(); ");
+//                    sb1.append(" }; ");
+//                    let blob = new Blob([data], {type: 'application/pdf'}); //mime type is important here
+//                    let link = document.createElement('a'); //create hidden a tag element
+//                    let objectURL = window.URL.createObjectURL(blob); //obtain the url for the pdf file
+//                    link.href = objectURL; // setting the href property for a tag
+//                    link.target = '_blank'; //opens the pdf file in  new tab
+//                    link.download = "fileName.pdf"; //makes the pdf file download
+//                    (document.body || document.documentElement).appendChild(link); //to work in firefox
+//                    link.click(); //imitating the click event for opening in new tab
+                   // https://docs.google.com/viewer?url=
+                    //sb1.append("req.onload = () => alert(req.responseText); }; ");
+
+//                    sb1.append("var http = new XMLHttpRequest();");
+//                    sb1.append("var url = 'Prints2?id=61213';");
+//                    sb1.append("var params = 'id=61213&month=2022-04';");
 //
-//                 sb1.append("var btn1 = document.getElementById('submit1');");
-//                    sb1.append("btn1.onclick = function(){");
+//                    sb1.append("http.open('POST', url, true);");
+//                    sb1.append("http.setRequestHeader('RequestVerificationToken', token.value);");
+//                    sb1.append("http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');");
+//                    sb1.append("http.onreadystatechange = function() {\n" +
+//                            "                        if(http.readyState == 4 && http.status == 200) {\n" +
+//                            "                           alert(http.responseText);\n" +
+//                            "                       }\n" +
+//                            "                    }");
+//                    sb1.append("http.send(params);");
+//                    sb1.append("http.onload = () => alert(http.response); }; ");
+//                    sb1.append("req.open('POST', '/Prints2?id=61213', true);");
+//                    sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
+//                    sb1.append("req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');");
+//                    sb1.append("req.send(body);");
+//                    sb1.append("req.onload = () => alert(req.response); }; ");
+//                    var http = new XMLHttpRequest();
+//                    var url = 'get_data.php';
+//                    var params = 'orem=ipsum&name=binny';
+//                    http.open('POST', url, true);
+//
+//                    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//
+//                    http.onreadystatechange = function() {//Call a function when the state changes.
+//                        if(http.readyState == 4 && http.status == 200) {
+//                            alert(http.responseText);
+//                        }
+//                    }
+//                    http.send(params);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    // sb1.append("req.open(\"POST\", \"/Prints2?id=61213\", true);");
+                    // sb1.append("var body = 'id=61213' + '&month=2022-04' + '&__RequestVerificationToken=' + token.value;");
+                    // sb1.append("var body = 'id=' + encodeURIComponent(61213) + '&month=' + encodeURIComponent(2022-04);"); __RequestVerificationToken
+                    //  sb1.append("var body = 'id=' + encodeURIComponent(61213) + '&month=' + encodeURIComponent(2022-04) + '&__RequestVerificationToken=' + encodeURIComponent(token.value);");
+
+                    //    var token = document.getElementsByName('__RequestVerificationToken')[0];
+                    //    var req = new XMLHttpRequest();
+                    //    req.open("POST", "/Prints2....", true);
+                    //    req.setRequestHeader("RequestVerificationToken", token.value);
 //                  sb1.append("var xhr = new XMLHttpRequest();\n" +
 //                          "\n" +
 //                          "var body = 'id=' + encodeURIComponent(61213) +\n" +
@@ -115,11 +280,11 @@ public class WebViewActivity extends AppCompatActivity {
 //                          "xhr.onreadystatechange = ...;\n" +
 //                          "\n" +
 //                          "xhr.send(body);");
-//                    sb1.append(" alert('S'); }; ");
-//                    sb1.append("}");
-//
-//                    view.loadUrl("javascript:" + sb1.toString());
-//                }
+
+                   // sb1.append("}");
+
+                    view.loadUrl("javascript:" + sb1.toString());
+                }
                 //Log.d("LOGLOG",url);
             }
         });
