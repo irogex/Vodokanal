@@ -17,8 +17,12 @@
         <entry key="app/src/main/res/drawable/oval_button_exit.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/oval_button_old.xml" value="0.195" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29030797101449274" />
+        <entry key="app/src/main/res/layout/activity_pdf.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_pin_code.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_valid.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/content_pdf.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/old_activity_pin_code.xml" value="0.1" />
         <entry key="app/src/main/res/layout/webiview_activity.xml" value="0.39166666666666666" />
