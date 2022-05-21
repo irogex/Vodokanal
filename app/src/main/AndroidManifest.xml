@@ -25,12 +25,12 @@
         android:theme="@style/Theme.VodokanalMainActivity">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.vodokanalmainactivity.fileprovider"
+            android:authorities="${applicationId}.provider"
             android:grantUriPermissions="true"
             android:exported="false">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
+                android:resource="@xml/provider_paths" />
         </provider>
         <activity
             android:name=".activities.ValidActivity"
@@ -58,6 +58,7 @@
             android:name=".activities.PdfActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
