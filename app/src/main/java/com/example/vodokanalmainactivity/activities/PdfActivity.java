@@ -8,13 +8,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vodokanalmainactivity.R;
-import com.github.barteksc.pdfviewer.PDFView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Base64;
 
 public class PdfActivity extends AppCompatActivity  {
    // DataPreferences dataPreferences;
@@ -30,59 +27,69 @@ public class PdfActivity extends AppCompatActivity  {
        // String PDF = arguments.get("pdfsend").toString(); //Здесь Буффер Обмена
         String PDF = arguments.get("pdfsend").toString(); //Здесь Буффер Обмена //Нужно получить Байты
         //String PDF = getBytes(arguments.get("pdfsend"));
-        byte[] byteArray = PDF.getBytes();
+        //byte[] byteArray = PDF.getBytes();
+        Toast.makeText(this, "Иду на запись", Toast.LENGTH_SHORT).show();
+        try {
+            FileOutputStream fileOutput = openFileOutput("/assets/FileName.pdf", MODE_PRIVATE);
+            fileOutput.write(PDF.getBytes());
+            fileOutput.close();
+            Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-       // byte[] bytes = new byte[byteArray];
+        // byte[] bytes = new byte[byteArray];
 //        fin.read(bytes);
 //        String text = new String (bytes);
 //        textView.setText(text);
 
        // Toast.makeText(this, PDF, Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_pdf);
-        PDFView pdfView = findViewById(R.id.pdfView);
+        //PDFView pdfView = findViewById(R.id.pdfView);
 
       //  File file = new File(String.valueOf(byteArray), "/assets/FileName.pdf"); //Создаю файл
         //File file = new File("asdasd", "assets/FileName.pdf"); //Создаю файл
 
-        String filepath = "assets/phone.png";
-        Path path = Paths.get(filepath);
-        if (Files.notExists(path)) {
+//        String filepath = "assets/phone.png";
+//        Path path = Paths.get(filepath);
+//        if (Files.notExists(path)) {
 //            throw new IllegalArgumentException("File is not exists!");
 //        }
 //        if(!filepath.exists()) {
-            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
-            try {
+//            Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
+//            try {
                // file.createNewFile();
                // boolean created = file.createNewFile();
               //  if(created)
                    // System.out.println("File has been created");
 
                 // convert the file's content to byte[]
-                byte[] bytes = Files.readAllBytes(path);
+              //  byte[] bytes = Files.readAllBytes(path);
 
                 // encode, byte[] to Base64 encoded string
-                String s = Base64.getEncoder().encodeToString(bytes);
-                System.out.println(s);
-
-                // decode, Base64 encoded string to byte[]
-                byte[] decode = Base64.getDecoder().decode(s);
+//                String s = Base64.getEncoder().encodeToString(bytes);
+//                System.out.println(s);
+//
+//                // decode, Base64 encoded string to byte[]
+//                byte[] decode = Base64.getDecoder().decode(s);
 
                 // save into another image file.
-                Files.write(Paths.get("assets/phone.png"), decode);
+               // Files.write(Paths.get("assets/phone.png"), decode);
                // EditText textBox = findViewById(R.id.editor);
                // String text = textBox.getText().toString();
               //  file.write(Paths.get("/Users/mkyong/phone2.png"), decode);
 //                fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
 //                fos.write(text.getBytes());
-                Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//                Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
            // InputStream()
             //inputStream //Запись файла
-        }
+   //     }
 
 
        // String myURL = "https://irogex.ru/api/test";
