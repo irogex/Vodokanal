@@ -13,7 +13,7 @@ public class PdfActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf);
+
         Bundle arguments = getIntent().getExtras();
         String PDF = arguments.get("pdfsend").toString();
 //        Toast.makeText(this, "Иду на запись", Toast.LENGTH_SHORT).show();
@@ -34,15 +34,16 @@ public class PdfActivity extends AppCompatActivity  {
 
             //file.write(PDF.getBytes());
            // file.close();
-            Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, PDF, Toast.LENGTH_SHORT).show();
 
            // PDFView pdfView = findViewById(R.id.pdfView);
+            setContentView(R.layout.activity_pdf);
             PDFView pdfView = findViewById(R.id.pdfView);
          //   pdfView.fromBytes(PDF.getBytes());
           //  pdfView.fromAsset(dir.getPath()+ "/"+"FileName1.pdf");
             pdfView.fromBytes(PDF.getBytes())
          //   pdfView.fromAsset(dir.getPath()+ "/"+"FileName1.pdf")
-                    //.pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
+                    .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
                     .enableSwipe(true) // allows to block changing pages using swipe
                     .swipeHorizontal(false)
                     .enableDoubletap(true)

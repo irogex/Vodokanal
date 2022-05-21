@@ -152,14 +152,16 @@ public class WebViewActivity extends AppCompatActivity {
                     sb1.append("req.open('POST', '/Prints2?handler=ChargePrint', true);");
                     sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
                     sb1.append("req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');");
-                     //sb1.append("req.responseType = 'Blob';");
+
                     sb1.append("req.responseType = 'Text';");
-                   // sb1.append("req.responseType = 'arraybuffer';");
+                    //sb1.append("req.responseType = 'arraybuffer';");
+                    //sb1.append("req.responseType = 'Blob';");
                     sb1.append("req.send(body);"); //Должен быть конечным //Искать саму реализацию принтера// Посмотреть по скрптам как возвращает ответ
                     sb1.append("req.onload = function () {\n" +
-                            //" var b = new Blob([req.response], { type: 'text/plain' });\n" +
-                            //" var url = window.URL.createObjectURL(b);\n" +
+                            //" var b = new Blob([req.response], { type: 'application/pdf' });\n" +
+                           // " var url = window.URL.createObjectURL(b);\n" +
                              "window.AndroidFunction.showPdf(req.response);\n" +
+                            // "window.AndroidFunction.showPdf(url);\n" +
 
 
 //                            " const a = document.createElement('a');\n" +
