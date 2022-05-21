@@ -26,12 +26,14 @@ public class PdfActivity extends AppCompatActivity  {
         Bundle arguments = getIntent().getExtras();
        // String PDF = arguments.get("pdfsend").toString(); //Здесь Буффер Обмена
         String PDF = arguments.get("pdfsend").toString(); //Здесь Буффер Обмена //Нужно получить Байты
+        String Test = "sdfs";
         //String PDF = getBytes(arguments.get("pdfsend"));
         //byte[] byteArray = PDF.getBytes();
         Toast.makeText(this, "Иду на запись", Toast.LENGTH_SHORT).show();
         try {
-            FileOutputStream fileOutput = openFileOutput("/assets/FileName.pdf", MODE_PRIVATE);
-            fileOutput.write(PDF.getBytes());
+            FileOutputStream fileOutput = openFileOutput("FileName.pdf", MODE_PRIVATE);
+           // fileOutput.write(PDF.getBytes(StandardCharsets.UTF_8));
+            fileOutput.write(Test.getBytes());
             fileOutput.close();
             Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
@@ -39,14 +41,14 @@ public class PdfActivity extends AppCompatActivity  {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        setContentView(R.layout.activity_pdf);
         // byte[] bytes = new byte[byteArray];
 //        fin.read(bytes);
 //        String text = new String (bytes);
 //        textView.setText(text);
 
        // Toast.makeText(this, PDF, Toast.LENGTH_SHORT).show();
-        setContentView(R.layout.activity_pdf);
+
         //PDFView pdfView = findViewById(R.id.pdfView);
 
       //  File file = new File(String.valueOf(byteArray), "/assets/FileName.pdf"); //Создаю файл
