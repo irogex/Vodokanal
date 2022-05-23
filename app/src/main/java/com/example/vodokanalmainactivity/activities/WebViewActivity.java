@@ -200,6 +200,7 @@ public class WebViewActivity extends AppCompatActivity {
                            // "saveAs(file, 'newPdf.pdf');\n" +
                                   //  saveAs(file, 'newPdf.pdf');
                             //const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+
                             //saveAs(pdfBlob, 'newPdf.pdf');
                             //" window.open(fileURL, \"EPrescription\");" +
                             //"document.body.innerHTML = encodeURI(fileURL);" +
