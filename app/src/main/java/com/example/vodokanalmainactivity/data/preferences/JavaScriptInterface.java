@@ -72,6 +72,7 @@ public class JavaScriptInterface extends AppCompatActivity {
 //        mContext.startActivity(i);
         //Скормить классу PDF
     }
+
 //    private void openPdf(byte[] toast){
 //
 //
