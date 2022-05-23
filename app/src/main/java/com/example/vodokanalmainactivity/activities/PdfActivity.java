@@ -18,36 +18,31 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 
 public class PdfActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
-
         Bundle arguments = getIntent().getExtras();
-        String PDF = arguments.getString("pdfsend");
+        byte[] PDF = arguments.getByteArray("pdfsend");
+       // String PDF = "sdfsdf";
 //        Toast.makeText(this, "Иду на запись", Toast.LENGTH_SHORT).show();
+        Log.d("LOGLOG", Arrays.toString(PDF));
         try {
-            // FileOutputStream fileOutput = openFileOutput("FileName1.txt", MODE_PRIVATE);
             File dir = new File(getApplicationContext().getFilesDir(), "mydir");
             if (!dir.exists()) {
                 dir.mkdir();
             }
             File file = new File(dir.getPath() + "/" + "FileName1.pdf");
+
+
+
             file.createNewFile();
-//            InputStream inputStream = getAssets().open("Prints2.pdf");
-//
-//            byte[] buffer = new byte[8192];
-//            int bytesRead;
-//            ByteArrayOutputStream output = new ByteArrayOutputStream();
-//            while ((bytesRead = inputStream.read(buffer)) != -1) {
-//                output.write(buffer, 0, bytesRead);
-//            }
-//            byte pdff[] = output.toByteArray();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 Files.copy(
-                        new ByteArrayInputStream(PDF.getBytes()),
+                        new ByteArrayInputStream(PDF),
                         file.toPath(),
                         StandardCopyOption.REPLACE_EXISTING);
             }
@@ -56,18 +51,22 @@ public class PdfActivity extends AppCompatActivity  {
                     getApplicationContext(), getApplicationContext().getPackageName() + ".provider",
                     file
             );
-//            val int = Intent(Intent.ACTION_VIEW, uri).apply {
-//                setDataAndType(uri, "application/vnd.android.package-archive")
-//                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-//                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-//            }
-//            context.startActivity(int)
             Intent intent = new Intent(Intent.ACTION_VIEW,uri);
             intent.setDataAndType(uri, "application/pdf");
             intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(intent);
+
+
+// 1           string contentDisposition;
+//            if (Request.Browser.Browser == "IE" && (Request.Browser.Version == "7.0" || Request.Browser.Version == "8.0"))
+//                contentDisposition = "attachment; filename=" + Uri.EscapeDataString(fileName);
+//            else if (Request.Browser.Browser == "Safari")
+//                contentDisposition = "attachment; filename=" + fileName;
+//            else
+//                contentDisposition = "attachment; filename*=UTF-8''" + Uri.EscapeDataString(fileName);
+// 1           Response.AddHeader("Content-Disposition", contentDisposition);
+
 //
 //            //file.write(PDF.getBytes());
 //            // file.close();
