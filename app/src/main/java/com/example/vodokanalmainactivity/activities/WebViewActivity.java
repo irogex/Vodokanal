@@ -143,12 +143,13 @@ public class WebViewActivity extends AppCompatActivity {
                 }
                 if (view.getUrl().contains("https://vdk03.m-pays.ru/Prints2")) {
                     StringBuilder sb1 = new StringBuilder();
-                    //sb1.append("var btn1 = document.getElementById('submit1');");
-                    //sb1.append("var btn1 = document.querySelectorAll('form#charge_report button[id=submit1]');");
                     sb1.append("var btn1 = document.querySelector('#charge_report #submit1');"); //Вызов Справка
                     sb1.append("btn1.onclick = function(){");
                     sb1.append("var token = document.getElementsByName('__RequestVerificationToken')[0];");
-                    sb1.append("var body = 'id=61213' + '&month=2022-05';");
+                   // sb1.append("var body = 'id=61213' + '&month=2022-05';");
+                    sb1.append("var id = document.querySelector('#charge_report input[name=id]');");
+                    sb1.append("var month = document.querySelector('#charge_report input[name=month]');");
+                    sb1.append("var body = 'id=' + id.value + '&month=' + month.value;");
                     sb1.append("var req = new XMLHttpRequest();");
                     sb1.append("req.open('POST', '/Prints2?handler=ChargePrint', true);");
                     sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
@@ -163,7 +164,11 @@ public class WebViewActivity extends AppCompatActivity {
                     sb1.append("var btn2 = document.querySelector('#period_report #submit1');"); //Вызов Периода
                     sb1.append("btn2.onclick = function(){");
                     sb1.append("var token = document.getElementsByName('__RequestVerificationToken')[0];");
-                    sb1.append("var body = 'id=61213' + '&dateIn=2021-06-01'+ '&dateOut=2022-06-01';");
+                    sb1.append("var id = document.querySelector('#period_report input[name=id]');");
+                    sb1.append("var dateIn = document.querySelector('#period_report input[name=dateIn]');");
+                    sb1.append("var dateOut = document.querySelector('#period_report input[name=dateOut]');");
+                    sb1.append("var body = 'id=' + id.value + '&dateIn='+ dateIn.value + '&dateOut=' + dateOut.value;");
+                    //sb1.append("var body = 'id=61213' + '&dateIn=2021-06-01'+ '&dateOut=2022-06-01';");
                     sb1.append("var req = new XMLHttpRequest();");
                     sb1.append("req.open('POST', '/Prints2?handler=PeriodReportPrint', true);");
                     sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
