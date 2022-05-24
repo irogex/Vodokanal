@@ -1,7 +1,10 @@
 package com.example.vodokanalmainactivity.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.ViewGroup;
@@ -12,6 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -22,11 +27,37 @@ import com.example.vodokanalmainactivity.data.preferences.JavaScriptInterface;
 
 public class WebViewActivity extends AppCompatActivity {
     DataPreferences dataPreferences;
+    private static final int PERMISSION_STORAGE = 101;
     @SuppressLint("SetJavaScriptEnabled")
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == PERMISSION_STORAGE) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                   if (PermissionUtils.hasPermissions(this)) {
+                      // Toast.makeText(this, "Разрешение получено", Toast.LENGTH_SHORT).show();
+                   } else {
+                      // Toast.makeText(this, "Разрешение не предоставлено", Toast.LENGTH_SHORT).show();
+                   }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+    @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                                     @NonNull int[] grantResults) {
+        if (requestCode == PERMISSION_STORAGE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                //tvPermission.setText("Разрешение получено");
+            } else {
+                //tvPermission.setText("Разрешение не предоставлено");
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.webiview_activity);
+
         final android.webkit.WebView webView = findViewById(R.id.webview);
         dataPreferences = ((App) getApplication()).dataPreferences;
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.light_blue));
@@ -38,6 +69,14 @@ public class WebViewActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new JavaScriptInterface(this), "AndroidFunction");
         webView.getSettings().setSupportMultipleWindows(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        if (PermissionUtils.hasPermissions(this)) {
+            //Toast.makeText(this, "Разрешение получено", Toast.LENGTH_SHORT).show();
+            // tvPermission.setText("Разрешение получено");
+        } else {
+           // Toast.makeText(this, "Разрешение не предоставлено", Toast.LENGTH_SHORT).show();
+            PermissionUtils.requestPermissions(this, PERMISSION_STORAGE);
+            // tvPermission.setText("Разрешение не предоставлено");
+        }
         webView.setWebChromeClient(new WebChromeClient(){
        //     @Override
 //            public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg)
@@ -53,6 +92,7 @@ public class WebViewActivity extends AppCompatActivity {
 //                Log.d("LOGLOG","br-"+data);
 //                return false;
 //            }
+
        @Override
        public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
            webView.removeAllViews();
@@ -110,6 +150,7 @@ public class WebViewActivity extends AppCompatActivity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
+
                 //super.onPageFinished(view, url);
                 view.getSettings().setDomStorageEnabled(true);
                 view.getSettings().setAppCacheEnabled(true);
@@ -155,7 +196,7 @@ public class WebViewActivity extends AppCompatActivity {
                     sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
                     sb1.append("req.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8');");
                     sb1.append("req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');");
-                    sb1.append("req.setRequestHeader('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1');");
+                    //sb1.append("req.setRequestHeader('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1');");
                      sb1.append("req.responseType = 'arraybuffer';");
                     sb1.append("req.send(body);");
                     sb1.append("req.onload = function () {\n" +
@@ -174,7 +215,7 @@ public class WebViewActivity extends AppCompatActivity {
                     sb1.append("req.setRequestHeader('RequestVerificationToken', token.value);");
                     sb1.append("req.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8');");
                     sb1.append("req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');");
-                    sb1.append("req.setRequestHeader('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1');");
+                    //sb1.append("req.setRequestHeader('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1');");
                     sb1.append("req.responseType = 'arraybuffer';");
                     sb1.append("req.send(body);");
                     sb1.append("req.onload = function () {\n" +

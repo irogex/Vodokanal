@@ -1,6 +1,7 @@
 package com.example.vodokanalmainactivity.data.preferences;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
@@ -8,8 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vodokanalmainactivity.App;
+import com.example.vodokanalmainactivity.activities.PdfActivity;
 import com.example.vodokanalmainactivity.activities.WebViewActivity;
-import com.example.vodokanalmainactivity.domain.OpenPdf;
 
 public class JavaScriptInterface extends AppCompatActivity {
 
@@ -66,10 +67,12 @@ public class JavaScriptInterface extends AppCompatActivity {
       //  Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
 //        Log.d("LOGLOG", Arrays.toString(toast));
 //        openPdf(toast);
-        (new OpenPdf()).execute(mContext,bytes);
-//        Intent i = new Intent( mContext, PdfActivity.class);
-//        i.putExtra("pdfsend", toast);
-//        mContext.startActivity(i);
+     //   Toast.makeText(mContext, "Установите приложение для - Чтения PDF файла", Toast.LENGTH_SHORT).show();
+       // (new OpenPdf()).execute(mContext,bytes);
+      //  (new OpenPdf()).execute(mContext,bytes);
+        Intent i = new Intent( mContext, PdfActivity.class);
+        i.putExtra("pdfsend", bytes);
+        mContext.startActivity(i);
         //Скормить классу PDF
     }
 
