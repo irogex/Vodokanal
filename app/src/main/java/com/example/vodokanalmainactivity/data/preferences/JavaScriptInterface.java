@@ -73,7 +73,7 @@ public class JavaScriptInterface extends AppCompatActivity {
         Intent i = new Intent( mContext, PdfActivity.class);
         i.putExtra("pdfsend", bytes);
         mContext.startActivity(i);
-        //Скормить классу PDF
+        //Подготовка к публикации в Play Market
     }
 
 //    private void openPdf(byte[] toast){

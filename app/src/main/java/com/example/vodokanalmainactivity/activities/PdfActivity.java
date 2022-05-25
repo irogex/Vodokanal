@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vodokanalmainactivity.R;
 import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.util.FitPolicy;
 
 public class PdfActivity extends AppCompatActivity  {
     @Override
@@ -28,7 +27,7 @@ public class PdfActivity extends AppCompatActivity  {
                     .enableAntialiasing(true) // improve rendering a little bit on low-res screens
                     // spacing between pages in dp. To define spacing color, set view background
                     .spacing(0)
-                    .pageFitPolicy(FitPolicy.WIDTH) // mode to fit pages in the view
+                    //.pageFitPolicy(FitPolicy.WIDTH) // mode to fit pages in the view
                     .load();
     }
 }
